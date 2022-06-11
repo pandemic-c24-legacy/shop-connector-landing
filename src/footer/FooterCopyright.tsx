@@ -6,7 +6,7 @@ const FooterCopyright = () => (
     <span role="img" aria-label="Love">
       ♥
     </span>{' '}
-    by <a href="">Checkotis</a>
+    by <a href="">Keksitos</a>
     <style jsx>
       {`
         .footer-copyright :global(a) {
