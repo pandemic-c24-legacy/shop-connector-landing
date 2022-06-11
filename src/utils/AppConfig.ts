@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'Starter',
-  title: 'Nextjs Starter',
-  description: 'Starter code for your Nextjs Boilerplate with Tailwind CSS',
+  site_name: 'Connectstore',
+  title: 'Connectstore | Sell more, work less',
+  description: 'Integrate Check24 with your Shopify store',
   locale: 'en',
 };

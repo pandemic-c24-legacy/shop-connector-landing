@@ -3,25 +3,25 @@ import { Section } from '../layout/Section';
 
 const VerticalFeatures = () => (
   <Section
-    title="Your title here"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at."
+    title="Connect Shopify with the Check24 markeplace"
+    description="Sync automatically your store with Check24, list your products on the marketplace and import all your orders, automatically."
   >
     <VerticalFeatureRow
-      title="Your title here"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+      title="Increase sales by reaching out to new customers"
+      description="List your Shopify products on the Check24 marketplace - with more than 10 million visitors per month. Add a new revenue stream within minutes."
       image="/assets/images/feature.svg"
       imageAlt="First feature alt text"
     />
     <VerticalFeatureRow
-      title="Your title here"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+      title="Never process your orders manually again"
+      description="Our integration automatically imports incoming Check24 orders into your Shopify shop. Set-it up and let the technonlogy do the tedious work for you."
       image="/assets/images/feature2.svg"
       imageAlt="Second feature alt text"
       reverse
     />
     <VerticalFeatureRow
-      title="Your title here"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+      title="Protect your business without technical skills"
+      description="Connect to your accounts and and start selling within minutes. We do all the job for you, without saving your data on our systems."
       image="/assets/images/feature3.svg"
       imageAlt="Third feature alt text"
     />
