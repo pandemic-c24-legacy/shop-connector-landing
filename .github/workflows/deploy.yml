@@ -16,10 +16,12 @@ jobs:
         username: pandemic
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
+          set -e
           cd ~/shop-connector-landing
           git checkout .
           git pull origin master
+          npm ci
           npm run build
-          pm2 startOrRestart ecosystem.config.json
+          pm2 startOrRestart ecosystem.config.js
 
     
