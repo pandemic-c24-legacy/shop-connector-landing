@@ -1,1 +1,27 @@
+name: 'Deploy Landing Page'
 
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.4.2
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.3.0 
+      with:
+        node-version: 18.x
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@1d1b21ca96111b1eb4c03c21c14ebb971d2200f6
+      with:
+        host: ${{ secrets.DIGITAL_OCEAN_SERVER_IP }}
+        username: pandemic
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          whoami
+
+    
