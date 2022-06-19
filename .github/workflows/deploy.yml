@@ -28,7 +28,7 @@ jobs:
           export WEBHOOK_URL=${WEBHOOK_URL}
           export MAILGUN_API_KEY=${MAILGUN_API_KEY}
           export MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
-          export MAILGUN_SENDER=${MAILGUN_SENDER }
+          export MAILGUN_SENDER=${MAILGUN_SENDER}
 
           cd ~/shop-connector-landing
           git checkout .
