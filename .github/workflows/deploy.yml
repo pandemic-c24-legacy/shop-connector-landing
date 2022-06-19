@@ -24,13 +24,12 @@ jobs:
           export MAILGUN_DOMAIN=${{ secrets.MAILGUN_DOMAIN }}
           export MAILGUN_SENDER=${{ secrets.MAILGUN_SENDER }}
           
-          env
-          #cd ~/shop-connector-landing
-          #git checkout .
-          #git pull origin master
-          #npm ci
-          #npm run build
-          #pm2 startOrRestart ecosystem.config.js
+          cd ~/shop-connector-landing
+          git checkout .
+          git pull origin master
+          npm ci
+          npm run build
+          pm2 startOrRestart ecosystem.config.js
           
   #  - name: Send Message to Discord Channel
   #    uses: fjogeleit/http-request-action@v1
