@@ -24,6 +24,12 @@ jobs:
         script_stop: true
         envs: MONGODB_URI,WEBHOOK_URL,MAILGUN_API_KEY,MAILGUN_DOMAIN,MAILGUN_SENDER
         script: |
+          export MONGODB_URI=${MONGODB_URI}
+          export WEBHOOK_URL=${WEBHOOK_URL}
+          export MAILGUN_API_KEY=${MAILGUN_API_KEY}
+          export MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
+          export MAILGUN_SENDER=${MAILGUN_SENDER }
+
           cd ~/shop-connector-landing
           git checkout .
           git pull origin master
