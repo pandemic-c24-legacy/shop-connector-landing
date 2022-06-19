@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "mongodb": "^4.7.0",
     "next": "^12.0.9",
+    "next-connect": "^0.12.2",
     "next-seo": "^4.29.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-jsx-plugin-postcss": "^4.0.1"
+    "styled-jsx-plugin-postcss": "^4.0.1",
+    "ts-mailgun": "^0.5.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.0.9",

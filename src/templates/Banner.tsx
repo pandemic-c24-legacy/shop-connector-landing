@@ -1,21 +1,13 @@
-import Link from 'next/link';
-
-import { Button } from '../button/Button';
-import { CTABanner } from '../cta/CTABanner';
-import { Section } from '../layout/Section';
+import { CTABanner } from '../components/cta/CTABanner';
+import EmailForm from '../components/form/EmailForm';
+import { Section } from '../components/layout/Section';
 
 const Banner = () => (
   <Section>
     <CTABanner
       title="Start using our Check24 integration for your Shopify store"
       subtitle="Work smarter not harder"
-      button={
-        <Link href="https://creativedesignsguru.com/category/nextjs/">
-          <a>
-            <Button>Request early access</Button>
-          </a>
-        </Link>
-      }
+      emailForm={<EmailForm />}
     />
   </Section>
 );

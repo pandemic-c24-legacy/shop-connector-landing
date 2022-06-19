@@ -1,4 +1,4 @@
-import { Meta } from '../layout/Meta';
+import { Meta } from '../components/layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import { Banner } from './Banner';
 import { Footer } from './Footer';

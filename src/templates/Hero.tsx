@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { Background } from '../background/Background';
-import { Button } from '../button/Button';
-import { HeroOneButton } from '../hero/HeroOneButton';
-import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
+import { Background } from '../components/background/Background';
+import EmailForm from '../components/form/EmailForm';
+import { HeroEmailForm } from '../components/hero/HeroEmailForm';
+import { Section } from '../components/layout/Section';
+import { NavbarTwoColumns } from '../components/navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
 const Hero = () => (
@@ -25,7 +25,7 @@ const Hero = () => (
     </Section>
 
     <Section yPadding="pt-20 pb-32">
-      <HeroOneButton
+      <HeroEmailForm
         title={
           <>
             {'The easiest way to sell on Check24 for\n'}
@@ -33,13 +33,7 @@ const Hero = () => (
           </>
         }
         description="List your products on the Check24 marketplace and process orders automatically"
-        button={
-          <Link href="">
-            <a>
-              <Button xl>Get early access</Button>
-            </a>
-          </Link>
-        }
+        emailForm={<EmailForm />}
       />
     </Section>
   </Background>
