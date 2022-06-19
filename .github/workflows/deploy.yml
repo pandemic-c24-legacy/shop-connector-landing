@@ -1,0 +1,27 @@
+name: 'Deploy Landing Page'
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@1d1b21ca96111b1eb4c03c21c14ebb971d2200f6
+      with:
+        host: ${{ secrets.DIGITAL_OCEAN_SERVER_IP }}
+        username: pandemic
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          set -e
+          cd ~/shop-connector-landing
+          git checkout .
+          git pull origin master
+          npm ci
+          npm run build
+          pm2 startOrRestart ecosystem.config.js
+
+    
