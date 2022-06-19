@@ -24,18 +24,19 @@ jobs:
           export MAILGUN_DOMAIN=${{ secrets.MAILGUN_DOMAIN }}
           export MAILGUN_SENDER=${{ secrets.MAILGUN_SENDER }}
           
-          cd ~/shop-connector-landing
-          git checkout .
-          git pull origin master
-          npm ci
-          npm run build
-          pm2 startOrRestart ecosystem.config.js
+          env
+          #cd ~/shop-connector-landing
+          #git checkout .
+          #git pull origin master
+          #npm ci
+          #npm run build
+          #pm2 startOrRestart ecosystem.config.js
           
-    - name: Send Message to Discord Channel
-      uses: fjogeleit/http-request-action@v1
-      with:
-        url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        method: 'POST'
-        data: '{"content": "Successfully deployed the landing page!"}'
+  #  - name: Send Message to Discord Channel
+  #    uses: fjogeleit/http-request-action@v1
+  #    with:
+  #      url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  #      method: 'POST'
+  #      data: '{"content": "Successfully deployed the landing page!"}'
 
     
