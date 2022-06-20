@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
 
-import { sendConfirmationEmail } from '../../lib/mailgun';
 import clientPromise from '../../lib/mongodb';
 import { postNewLeadMessage } from '../../services/discordService';
+import * as mailgunService from '../../services/mailgunService';
 
 const handler = nextConnect();
 
@@ -41,7 +41,7 @@ const processIncomingEmail = async (
     if (!validateEmail(email)) throw new Error('Email not valid');
     await saveNewLead(email);
     await postNewLeadMessage(email);
-    await sendConfirmationEmail(email);
+    await mailgunService.sendConfirmationEmail(email);
     res.send({ message: 'OK' });
   } catch (error) {
     res.send({ message: 'email not submitted', error });
