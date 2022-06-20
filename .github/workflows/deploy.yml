@@ -11,17 +11,37 @@ jobs:
     steps:
     - name: SSH Remote Commands
       uses: appleboy/ssh-action@1d1b21ca96111b1eb4c03c21c14ebb971d2200f6
+      env:
+        MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
+        MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
+        MAILGUN_SENDER: ${{ secrets.MAILGUN_SENDER }}
       with:
         host: ${{ secrets.DIGITAL_OCEAN_SERVER_IP }}
         username: pandemic
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script_stop: true
+        envs: MONGODB_URI,WEBHOOK_URL,MAILGUN_API_KEY,MAILGUN_DOMAIN,MAILGUN_SENDER
         script: |
-          set -e
+          export MONGODB_URI=${MONGODB_URI}
+          export WEBHOOK_URL=${WEBHOOK_URL}
+          export MAILGUN_API_KEY=${MAILGUN_API_KEY}
+          export MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
+          export MAILGUN_SENDER=${MAILGUN_SENDER}
+
           cd ~/shop-connector-landing
           git checkout .
           git pull origin master
           npm ci
           npm run build
           pm2 startOrRestart ecosystem.config.js
+          
+  #  - name: Send Message to Discord Channel
+  #    uses: fjogeleit/http-request-action@v1
+  #    with:
+  #      url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  #      method: 'POST'
+  #      data: '{"content": "Successfully deployed the landing page!"}'
 
     

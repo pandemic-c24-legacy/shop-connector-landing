@@ -1,4 +1,5 @@
 const WEBHOOK_URL = process.env.WEBHOOK_URL as string;
+console.log(WEBHOOK_URL);
 
 type WebhookPayload = {
   content: string;
