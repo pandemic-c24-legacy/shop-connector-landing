@@ -37,11 +37,11 @@ jobs:
           npm run build
           pm2 startOrRestart ecosystem.config.js
           
-  #  - name: Send Message to Discord Channel
-  #    uses: fjogeleit/http-request-action@v1
-  #    with:
-  #      url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-  #      method: 'POST'
-  #      data: '{"content": "Successfully deployed the landing page!"}'
+    - name: Send Message to Discord Channel
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        method: 'POST'
+        data: '{"content": "Successfully deployed the landing page!"}'
 
     
